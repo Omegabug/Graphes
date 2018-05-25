@@ -1,14 +1,17 @@
 import java.lang.String;
 
 public class Sommet {
-    String couleur;
+    Couleur couleur;
+    String
     Sommet[] arretes;
 
     //Crée un sommet générique
     public Sommet (){
+
         //Blanc est la couleur par défaut
         couleur="Blanc";
     }
+
 
     //Crée un sommet à partir d'une couleur donnée et d'une liste de sommet
     public Sommet (String c,Sommet[] ls){
