@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graphe {
-    protected Sommet[] ensembleSommet;
+    protected List<Sommet> ensembleSommet;
     protected String nom;
     //Vrais si le graphe est orienté
     protected boolean oriente;
@@ -13,7 +13,7 @@ public class Graphe {
     protected int nbValArcs;
     public Graphe(String fichier){
         FileInputStream f=null;
-        int nbSommets;
+        ensembleSommet=new ArrayList<Sommet>();
         //On ouvre le fichier donné en argument
         /*try {
 
@@ -31,6 +31,7 @@ public class Graphe {
             InputStream in = null;
             BufferedReader br = null;
             String line="";
+
             int compteurLigne=0;
             try {
                 in = new FileInputStream(adresseFichier);
@@ -83,7 +84,11 @@ public class Graphe {
 
                     }
                     if (compteurLigne>6&&compteurLigne<6+nbSommet){
+                        //On va jusqu'a l'espace pour avoir le nom du sommet
+                        position=line.indexOf(' ')+1;
+                        line=line.substring(position);
 
+                        ensembleSommet.add(new Sommet(line));
                     }
                     compteurLigne++;
 

@@ -1,35 +1,62 @@
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Sommet {
     Couleur couleur;
-    String
-    Sommet[] arretes;
+
+
+
+    String nom;
+    List<Sommet> arretes;
 
     //Crée un sommet générique
     public Sommet (){
+        arretes=new ArrayList<Sommet>();
+        //White est la couleur par défaut
+        couleur=Couleur.WHITE;
+        nom="Default";
 
-        //Blanc est la couleur par défaut
-        couleur="Blanc";
+    }
+
+    public Sommet (String n){
+        arretes=new ArrayList<Sommet>();
+        //White est la couleur par défaut
+        couleur=Couleur.WHITE;
+        nom=n;
+
     }
 
 
     //Crée un sommet à partir d'une couleur donnée et d'une liste de sommet
-    public Sommet (String c,Sommet[] ls){
+    public Sommet (Couleur c, List<Sommet> ls, String n){
+        arretes=new ArrayList<Sommet>();
         couleur=c;
         arretes=ls;
+        nom=n;
     }
 
     //Crée un sommet à partir d'une couleur donnée;
-    public Sommet (String c){
+    public Sommet (Couleur c){
+        arretes=new ArrayList<Sommet>();
         couleur=c;
+        nom="Default";
     }
 
-    public String getCouleur(){
+    public Couleur getCouleur(){
         return couleur;
     }
     //Renvoit le sommet à position pointée par l'index
     public Sommet getSommet(int index){
-        return arretes[index];
+        return arretes.get(index);
     }
 
+
+    public void rajouterSommet(Sommet s){
+        arretes.add(s);
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }
