@@ -99,8 +99,8 @@ public class Graphe {
             } finally {
                 if (br != null) br.close();
                 if (in != null) in.close();
-                return line;
-            }
 
+            }
+            return line;
     }
 }
