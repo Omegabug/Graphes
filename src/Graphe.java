@@ -31,7 +31,8 @@ public class Graphe {
             InputStream in = null;
             BufferedReader br = null;
             String line="";
-
+            String subLine="";
+            int temp1,temp2;
             int compteurLigne=0;
             try {
                 in = new FileInputStream(adresseFichier);
@@ -91,6 +92,16 @@ public class Graphe {
                         ensembleSommet.add(new Sommet(line));
                     }
                     compteurLigne++;
+
+                    if(compteurLigne>6+nbSommet+2&&compteurLigne<6+nbSommet+3+nbArcs){
+                        //On trouve l'espace entre les 2 chiffres
+
+                        temp1=Integer.parseInt(line.substring(0,line.indexOf(' ')));
+                        temp2=Integer.parseInt(line.substring(line.indexOf(' ')+1));
+                        ensembleSommet.get(temp1).rajouterSommet(ensembleSommet.get(temp2));
+                        if(!oriente)
+                            ensembleSommet.get(temp2).rajouterSommet(ensembleSommet.get(temp1));
+                    }
 
                 }
 
