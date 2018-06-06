@@ -9,21 +9,17 @@ public class Graphe {
         return ensembleSommet;
     }
 
-    protected List<Sommet> ensembleSommet;
     protected String nom;
-    //Vrais si le graphe est orienté
     protected boolean oriente;
     protected int nbSommet;
     protected int nbValSommet;
     protected int nbArcs;
     protected int nbValArcs;
-    public Graphe(String fichier){
-        FileInputStream f=null;
-        ensembleSommet=new ArrayList<Sommet>();
 
-    }
+    protected List<Sommet> ensembleSommet = new ArrayList<Sommet>();
 
-
+    public Graphe() {}
+    
     public void lectureGraphe(String adresseFichier) throws IOException {
 
 
