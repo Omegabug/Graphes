@@ -7,7 +7,8 @@ public class test {
         Graphe g=new Graphe("hfeuhbhuebviurhv");
         String line;
         try {
-            line=g.lectureGraphe("crown10.txt");
+            g.lectureGraphe("crown10.txt");
+            System.out.println(g);
 
         } catch (IOException e) {
             e.printStackTrace();

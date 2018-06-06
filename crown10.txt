@@ -1,5 +1,5 @@
 Nom: crown10
-Oriente(non/oui): oui
+Oriente(non/oui): non
 NbSommets: 20
 NbValSommet: 0
 NbArcs: 90

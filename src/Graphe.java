@@ -14,24 +14,16 @@ public class Graphe {
     public Graphe(String fichier){
         FileInputStream f=null;
         ensembleSommet=new ArrayList<Sommet>();
-        //On ouvre le fichier donné en argument
-        /*try {
 
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
     }
 
 
-    public String lectureGraphe(String adresseFichier) throws IOException {
+    public void lectureGraphe(String adresseFichier) throws IOException {
 
 
             InputStream in = null;
             BufferedReader br = null;
             String line="";
-            String subLine="";
             int temp1,temp2;
             int compteurLigne=0;
             try {
@@ -112,6 +104,19 @@ public class Graphe {
                 if (in != null) in.close();
 
             }
-            return line;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Graphe{" +
+                "ensembleSommet=" + ensembleSommet +
+                ", nom='" + nom + '\'' +
+                ", oriente=" + oriente +
+                ", nbSommet=" + nbSommet +
+                ", nbValSommet=" + nbValSommet +
+                ", nbArcs=" + nbArcs +
+                ", nbValArcs=" + nbValArcs +
+                '}';
     }
 }

@@ -6,7 +6,6 @@ public class Sommet {
     Couleur couleur;
 
 
-
     String nom;
     List<Sommet> arretes;
 
@@ -17,6 +16,11 @@ public class Sommet {
         couleur=Couleur.WHITE;
         nom="Default";
 
+    }
+
+
+    public String getNom() {
+        return nom;
     }
 
     public Sommet (String n){
@@ -60,5 +64,16 @@ public class Sommet {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    @Override
+    public String toString() {
+        String retour;
+        retour="Sommet "+nom+":\n";
+        for (int i = 0; i < arretes.size(); i++) {
+             retour= retour+" "+arretes.get(i).getNom()+"\n";
+
+        }
+        return retour;
     }
 }
