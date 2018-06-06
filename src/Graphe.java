@@ -3,6 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graphe {
+    public List<Sommet> getEnsembleSommet() {
+        return ensembleSommet;
+    }
+
     protected List<Sommet> ensembleSommet;
     protected String nom;
     //Vrais si le graphe est orienté
@@ -41,14 +45,14 @@ public class Graphe {
                         case 0:
 
                             nom=line;
-                            System.out.println(line);
+
 
                             break;
                         case 1:
                             //On vérifie que notre graphe est orienté
                             if(line.equalsIgnoreCase("oui")){
                                 oriente=true;
-                                System.out.println(line);
+
 
                             }
                             else{
@@ -57,26 +61,26 @@ public class Graphe {
                             break;
                         case 2:
                             nbSommet=Integer.parseInt(line);
-                            System.out.println(nbSommet);
+
                             break;
                         case 3:
                             nbValSommet=Integer.parseInt(line);
-                            System.out.println(nbValSommet);
+
                             break;
                         case 4:
                             nbArcs=Integer.parseInt(line);
-                            System.out.println(nbArcs);
+
                             break;
                         case 5:
                             nbValArcs=Integer.parseInt(line);
-                            System.out.println(nbValArcs);
+
                             break;
                         case 6:
                             break;
 
 
                     }
-                    if (compteurLigne>6&&compteurLigne<6+nbSommet){
+                    if (compteurLigne>7&&compteurLigne<=7+nbSommet){
                         //On va jusqu'a l'espace pour avoir le nom du sommet
                         position=line.indexOf(' ')+1;
                         line=line.substring(position);
@@ -85,7 +89,7 @@ public class Graphe {
                     }
                     compteurLigne++;
 
-                    if(compteurLigne>6+nbSommet+2&&compteurLigne<6+nbSommet+3+nbArcs){
+                    if(compteurLigne>7+nbSommet+1&&compteurLigne<7+nbSommet+2+nbArcs){
                         //On trouve l'espace entre les 2 chiffres
 
                         temp1=Integer.parseInt(line.substring(0,line.indexOf(' ')));

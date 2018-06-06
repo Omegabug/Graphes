@@ -58,8 +58,9 @@ public class Sommet {
 
     public void rajouterSommet(Sommet s){
         //Si on n'a pas déja le sommet on le rajoute à notre liste
-        if(!arretes.contains(s))
+        if(arretes.size()==0||!arretes.contains(s))
             arretes.add(s);
+        System.out.println(arretes.get(0));
     }
 
     public void setNom(String nom) {
