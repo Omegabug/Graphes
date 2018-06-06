@@ -80,12 +80,13 @@ public class Graphe {
 
 
                     }
-                    if (compteurLigne>7&&compteurLigne<=7+nbSommet){
+                    if (compteurLigne>6&&compteurLigne<7+nbSommet){
                         //On va jusqu'a l'espace pour avoir le nom du sommet
                         position=line.indexOf(' ')+1;
                         line=line.substring(position);
 
                         ensembleSommet.add(new Sommet(line));
+                       
                     }
                     compteurLigne++;
 

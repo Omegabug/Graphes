@@ -60,7 +60,7 @@ public class Sommet {
         //Si on n'a pas déja le sommet on le rajoute à notre liste
         if(arretes.size()==0||!arretes.contains(s))
             arretes.add(s);
-        System.out.println(arretes.get(0));
+
     }
 
     public void setNom(String nom) {
