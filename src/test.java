@@ -8,8 +8,9 @@ public class test {
         String line;
         try {
             g.lectureGraphe("crown10.txt");
+            //System.out.println(g);
+            g.ordonnerSommets();
             System.out.println(g);
-
 
         } catch (IOException e) {
             e.printStackTrace();

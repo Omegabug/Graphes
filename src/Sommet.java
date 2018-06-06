@@ -77,4 +77,8 @@ public class Sommet {
         }
         return retour;
     }
+    //Retourne le degré du sommet
+    public int degre(){
+        return arretes.size();
+    }
 }

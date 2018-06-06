@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Graphe {
@@ -86,7 +88,7 @@ public class Graphe {
                         line=line.substring(position);
 
                         ensembleSommet.add(new Sommet(line));
-                       
+
                     }
                     compteurLigne++;
 
@@ -123,5 +125,19 @@ public class Graphe {
                 ", nbArcs=" + nbArcs +
                 ", nbValArcs=" + nbValArcs +
                 '}';
+    }
+    //On ordonne les sommets en fonction de leur degré
+    public void ordonnerSommets(){
+        /*Collections.sort(ensembleSommet, new Comparator<Sommet>() {
+            @Override
+            public int compare(Sommet s1,Sommet s2){
+                if( s1.degre()>s2.degre()) return 1;
+                else {
+                    System.out.println(s1.degre());
+                    return 0;
+                }
+            }
+        });*/
+        ensembleSommet.sort(Comparator.comparing(Sommet::degre));
     }
 }
