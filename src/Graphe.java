@@ -84,7 +84,7 @@ public class Graphe {
     }
 
     // On ordonne les sommets en fonction de leur degré
-    public void ordonnerSommets(){
+    public List<Sommet> ordonnerSommets(){
         /*Collections.sort(sommets, new Comparator<Sommet>() {
             @Override
             public int compare(Sommet s1,Sommet s2){
@@ -95,7 +95,10 @@ public class Graphe {
                 }
             }
         });*/
-        sommets.sort(Comparator.comparing(Sommet::degre));
+        List<Sommet> sommetsSorted=new ArrayList<>(sommets);
+
+        sommetsSorted.sort(Comparator.comparing(Sommet::degre));
+        return sommetsSorted;
     }
 
     public void listeAdjacence() {
@@ -112,7 +115,40 @@ public class Graphe {
         System.out.println("\n");
     }
 
+    public void getColoration() {
+        System.out.println("La coloration du graphe " + this + " :");
+        for (Sommet s : sommets) {
+            System.out.println("La couleur du sommet "+s+" est "+s.getCouleur());
+        }
+        System.out.println("\n");
+    }
+
     public String toString() { return nom;}
 
     public List<Sommet> getSommets() { return sommets; }
+
+    public void greedyColoring(){
+        //On ordonne les sommets
+        List<Sommet> fileAttente=ordonnerSommets();
+        List<Integer> couleursPresentes;
+        Sommet x;
+        int c;
+
+        while (!fileAttente.isEmpty()){
+            x=fileAttente.get(0);
+            //On réinitialise la liste des couleurs présentent dans l'entourage du sommet
+            couleursPresentes=x.couleurVoisin();
+            c=0;
+
+            while (couleursPresentes.contains(c)){
+                c++;
+
+            }
+            x.setCouleur(c);
+            fileAttente.remove(x);
+
+        }
+        System.out.println("finis");
+        this.getColoration();
+    }
 }

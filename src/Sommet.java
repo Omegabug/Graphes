@@ -4,7 +4,11 @@ import java.util.List;
 
 public class Sommet {
 
-    private Couleur couleur = Couleur.WHITE;
+    public void setCouleur(int couleur) {
+        this.couleur = couleur;
+    }
+
+    private int couleur = 0;
     private int numero = 0;
     private String nom = "Default";
     private List<Sommet> aretes = new ArrayList<>();
@@ -18,12 +22,12 @@ public class Sommet {
     }
 
     // Crée un sommet à partir d'une couleur donnée.
-    public Sommet (Couleur c) {
+    public Sommet (int c) {
         couleur = c;
     }
 
     // Crée un sommet à partir d'une couleur donnée et d'une liste de sommets
-    public Sommet (Couleur c, List<Sommet> ls, int num, String name){
+    public Sommet (int c, List<Sommet> ls, int num, String name){
         couleur = c;
         aretes = ls;
         numero = num;
@@ -43,7 +47,7 @@ public class Sommet {
 
     public String toString() { return String.valueOf(numero); }
 
-    public Couleur getCouleur(){
+    public int getCouleur(){
         return couleur;
     }
 
@@ -57,4 +61,13 @@ public class Sommet {
         this.nom = nom;
     }
 
+    public List<Integer> couleurVoisin(){
+        List<Integer> couleurVoisin=new ArrayList<>();
+
+        for (int i = 0; i < aretes.size(); i++) {
+             couleurVoisin.add(aretes.get(i).getCouleur());
+
+        }
+        return couleurVoisin;
+    }
 }

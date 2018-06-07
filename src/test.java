@@ -1,5 +1,8 @@
 import java.io.IOException;
 import java.util.function.Consumer;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class test {
 
@@ -13,6 +16,11 @@ public class test {
     public static void main(String[] args) {
         Graphe g = new Graphe();
         g.lectureGraphe("crown10.txt");
+        List<Sommet> temp;
+        temp=g.ordonnerSommets();
+
+
+        g.greedyColoring();
         // clocking(g, x -> x.lectureGraphe("crown10.txt"));
         // g.ordonnerSommets();
     }
