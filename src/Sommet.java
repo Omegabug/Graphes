@@ -3,82 +3,58 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sommet {
-    Couleur couleur;
 
+    private Couleur couleur = Couleur.WHITE;
+    private int numero = 0;
+    private String nom = "Default";
+    private List<Sommet> aretes = new ArrayList<>();
 
-    String nom;
-    List<Sommet> arretes;
+    // Crée un sommet générique.
+    public Sommet () {}
 
-    //Crée un sommet générique
-    public Sommet (){
-        arretes=new ArrayList<Sommet>();
-        //White est la couleur par défaut
-        couleur=Couleur.WHITE;
-        nom="Default";
+    public Sommet (int num, String name) {
+        numero = num;
+        nom = name;
+    }
 
+    // Crée un sommet à partir d'une couleur donnée.
+    public Sommet (Couleur c) {
+        couleur = c;
+    }
+
+    // Crée un sommet à partir d'une couleur donnée et d'une liste de sommets
+    public Sommet (Couleur c, List<Sommet> ls, int num, String name){
+        couleur = c;
+        aretes = ls;
+        numero = num;
+        nom = name;
+    }
+
+    public void rajouterSommet(Sommet s){
+        // Si on n'a pas déja le sommet on le rajoute à notre liste.
+        if (aretes.size()==0 || !aretes.contains(s)) aretes.add(s);
+    }
+
+    // Retourne le degré du sommet
+    public int degre(){
+        return aretes.size();
     }
 
 
-    public String getNom() {
-        return nom;
-    }
-
-    public Sommet (String n){
-        arretes=new ArrayList<Sommet>();
-        //White est la couleur par défaut
-        couleur=Couleur.WHITE;
-        nom=n;
-
-    }
-
-
-    //Crée un sommet à partir d'une couleur donnée et d'une liste de sommet
-    public Sommet (Couleur c, List<Sommet> ls, String n){
-        arretes=new ArrayList<Sommet>();
-        couleur=c;
-        arretes=ls;
-        nom=n;
-    }
-
-    //Crée un sommet à partir d'une couleur donnée;
-    public Sommet (Couleur c){
-        arretes=new ArrayList<Sommet>();
-        couleur=c;
-        nom="Default";
-    }
+    public String toString() { return String.valueOf(numero); }
 
     public Couleur getCouleur(){
         return couleur;
     }
-    //Renvoit le sommet à position pointée par l'index
+
+    public List<Sommet> getAretes() { return aretes; }
+
     public Sommet getSommet(int index){
-        return arretes.get(index);
-    }
-
-
-    public void rajouterSommet(Sommet s){
-        //Si on n'a pas déja le sommet on le rajoute à notre liste
-        if(arretes.size()==0||!arretes.contains(s))
-            arretes.add(s);
-
+        return aretes.get(index);
     }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    @Override
-    public String toString() {
-        String retour;
-        retour="Sommet "+nom+":\n";
-        for (int i = 0; i < arretes.size(); i++) {
-             retour= retour+" "+arretes.get(i).getNom()+"\n";
-
-        }
-        return retour;
-    }
-    //Retourne le degré du sommet
-    public int degre(){
-        return arretes.size();
-    }
 }
