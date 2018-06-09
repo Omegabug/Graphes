@@ -21,6 +21,8 @@ public class test {
 
 
         g.greedyColoring();
+        g.reinitialiserCouleur();
+        g.welshPowell();
         // clocking(g, x -> x.lectureGraphe("crown10.txt"));
         // g.ordonnerSommets();
     }

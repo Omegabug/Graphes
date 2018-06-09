@@ -97,7 +97,7 @@ public class Graphe {
         });*/
         List<Sommet> sommetsSorted=new ArrayList<>(sommets);
 
-        sommetsSorted.sort(Comparator.comparing(Sommet::degre));
+        sommetsSorted.sort(Comparator.comparing(Sommet::degre).reversed());
         return sommetsSorted;
     }
 
@@ -105,7 +105,7 @@ public class Graphe {
         System.out.println("Liste d'adjacence du graphe " + this + " :");
         for (Sommet s : sommets) {
             if (s.degre() != 0) {
-                System.out.print(s + " ->");
+                System.out.print(s.getNom() + " ->");
                 for (Sommet arete : s.getAretes()) {
                     System.out.print(" " + arete);
                 }
@@ -118,7 +118,7 @@ public class Graphe {
     public void getColoration() {
         System.out.println("La coloration du graphe " + this + " :");
         for (Sommet s : sommets) {
-            System.out.println("La couleur du sommet "+s+" est "+s.getCouleur());
+            System.out.println("La couleur du sommet "+s.getNom()+" est "+s.getCouleur());
         }
         System.out.println("\n");
     }
@@ -148,7 +148,45 @@ public class Graphe {
             fileAttente.remove(x);
 
         }
-        System.out.println("finis");
+        System.out.println("Test greedy avec tri");
         this.getColoration();
+    }
+
+    public void welshPowell(){
+        List<Sommet> fileAttente=ordonnerSommets();
+        List<Integer> couleursPresentes;
+        Sommet x,y;
+        int i;
+        int k=1;
+        reinitialiserCouleur();
+        while(!fileAttente.isEmpty()){
+            x=fileAttente.get(0);
+            x.setCouleur(k);
+            fileAttente.remove(x);
+
+            for (i = 0; i < fileAttente.size(); i++) {
+                y=fileAttente.get(i);
+                 if (!y.couleurVoisin().contains(k)){
+                    y.setCouleur(k);
+                    fileAttente.remove(y);
+                    i--;
+
+                 }
+
+
+
+            }
+            k++;
+
+        }
+        System.out.println("Test de Welsh Powell");
+        this.getColoration();
+    }
+
+    public void reinitialiserCouleur(){
+        for (Sommet s:
+             sommets) {
+            s.setCouleur(0);
+        }
     }
 }
