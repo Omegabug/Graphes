@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0194e856-57ff-4573-bad8-a7b9e950e55c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/crown10.txt" afterPath="$PROJECT_DIR$/crown10.txt" />
-      <change beforePath="$PROJECT_DIR$/src/Graphe.java" afterPath="$PROJECT_DIR$/src/Graphe.java" />
-      <change beforePath="$PROJECT_DIR$/src/Sommet.java" afterPath="$PROJECT_DIR$/src/Sommet.java" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,22 +14,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="crown10.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crown10.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="918">
-              <caret line="54" column="4" lean-forward="true" selection-start-line="46" selection-start-column="3" selection-end-line="54" selection-end-column="4" />
+              <caret line="54" column="4" lean-forward="false" selection-start-line="46" selection-start-column="3" selection-end-line="54" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sommet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sommet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Sommet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#496#497#0" expanded="true" />
                 <element signature="e#523#524#0" expanded="true" />
@@ -41,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="22" column="124" lean-forward="false" selection-start-line="22" selection-start-column="124" selection-end-line="22" selection-end-column="124" />
+            <state relative-caret-position="85">
+              <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,7 +53,7 @@
       <file leaf-file-name="Graphe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graphe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
+            <state relative-caret-position="-1087">
               <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
               <folding />
             </state>
@@ -117,6 +114,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -134,7 +132,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
@@ -275,7 +272,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528310669062</updated>
-      <workItem from="1528310672372" duration="5388000" />
+      <workItem from="1528310672372" duration="5462000" />
+      <workItem from="1528359299548" duration="32000" />
+      <workItem from="1528640109239" duration="284000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1528310868022</created>
@@ -291,11 +290,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528312782941</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Methode pour chronométrer une fonction sur un graphe">
+      <created>1528316375316</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1528316375316</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5388000" />
+    <option name="totallyTimeSpent" value="5778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -303,32 +309,32 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33158585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33158585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,41 +346,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test" />
     <MESSAGE value="Liste d'adjacence dispo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Liste d'adjacence dispo" />
+    <MESSAGE value="Methode pour chronométrer une fonction sur un graphe" />
+    <MESSAGE value=":(" />
+    <option name="LAST_COMMIT_MESSAGE" value=":(" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crown10.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
-          <caret line="54" column="4" lean-forward="true" selection-start-line="46" selection-start-column="3" selection-end-line="54" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Clocking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="40" lean-forward="false" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <caret line="54" column="4" lean-forward="false" selection-start-line="46" selection-start-column="3" selection-end-line="54" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -382,6 +366,43 @@
     <entry file="file://$PROJECT_DIR$/src/Sommet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crown10.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="4" lean-forward="false" selection-start-line="46" selection-start-column="3" selection-end-line="54" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sommet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#496#497#0" expanded="true" />
@@ -392,7 +413,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
+        <state relative-caret-position="306">
           <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
           <folding />
         </state>
@@ -400,10 +421,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="374">
           <caret line="22" column="124" lean-forward="false" selection-start-line="22" selection-start-column="124" selection-end-line="22" selection-end-column="124" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crown10.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="4" lean-forward="false" selection-start-line="46" selection-start-column="3" selection-end-line="54" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Clocking.java" />
+    <entry file="file://$PROJECT_DIR$/src/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graphe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1087">
+          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sommet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
           </folding>
         </state>
       </provider>
