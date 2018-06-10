@@ -18,14 +18,15 @@ public class Graphe {
 
     public void lectureGraphe(String adresseFichier) {
 
-            InputStream in = null;
-            BufferedReader br = null;
+            InputStream in;
+            BufferedReader br;
             String line;
             int temp1, temp2;
             int compteurLigne = 0;
             int compteurSommet = 0;
 
             try {
+                System.out.println("Création d'un nouveau graphe...");
                 in = new FileInputStream(adresseFichier);
                 br = new BufferedReader(new InputStreamReader(in, "UTF-8"), 2048);
 
@@ -75,10 +76,12 @@ public class Graphe {
                         if (!oriente) sommets.get(temp2).rajouterSommet(sommets.get(temp1));
                     }
                 }
+                System.out.println("Création du graphe " + nom + " réussie !");
                 listeAdjacence();
                 br.close();
                 in.close();
             } catch (IOException e) {
+                System.out.println("Création du graphe avortée !");
                 e.printStackTrace();
             }
     }
@@ -91,7 +94,7 @@ public class Graphe {
     }
 
     public void listeAdjacence() {
-        System.out.println("Liste d'adjacence du graphe " + this + " :");
+        System.out.println("Liste d'adjacence :");
         for (Sommet s : sommets) {
             if (s.degre() != 0) {
                 System.out.print(s + " ->");
@@ -106,14 +109,6 @@ public class Graphe {
 
     public int getColoration() {
 
-        /*
-        System.out.println("La coloration du graphe " + this + " :");
-        for (Sommet s : sommets) {
-            System.out.println("La couleur du sommet " + s + " est " + s.getCouleur() + ".");
-        }
-        System.out.println("\n");
-        */
-
         List<Integer> listeCouleurs = new ArrayList<>();
         int couleur;
         for (Sommet s : sommets) {
@@ -121,6 +116,7 @@ public class Graphe {
                 listeCouleurs.add(couleur);
             }
         }
+
         int length = listeCouleurs.size();
         System.out.println("Nombre de couleurs nécessaires pour colorier le graphe : " + length);
         for (Integer color : listeCouleurs) {
@@ -132,11 +128,13 @@ public class Graphe {
             }
             System.out.print("\n");
         }
-        System.out.print("\n");
         return length;
     }
 
     public void greedyColoring(){
+        //System.out.println("ALGORITHME GREEDY.");
+        reinitialiserCouleur();
+
         // On ordonne les sommets.
         List<Sommet> fileAttente = ordonnerSommets();
         List<Integer> couleursPresentes;
@@ -153,17 +151,17 @@ public class Graphe {
             x.setCouleur(c);
             fileAttente.remove(x);
         }
-        //TODO: Préciser le tri fait.
-        System.out.println("Test Greedy avec tri.");
-        this.getColoration();
+        //this.getColoration();
     }
 
-    public void welshPowell(){
+    public void welshPowell() {
+        //System.out.println("ALGORITHME DE WELSH POWELL.");
+        reinitialiserCouleur();
+
         List<Sommet> fileAttente = ordonnerSommets();
         Sommet x, y;
         int i;
         int k = 1;
-        reinitialiserCouleur();
         while(!fileAttente.isEmpty()){
             x = fileAttente.get(0);
             x.setCouleur(k);
@@ -178,18 +176,18 @@ public class Graphe {
             }
             k++;
         }
-        System.out.println("Test de Welsh Powell.");
-        this.getColoration();
+        //this.getColoration();
     }
 
     public void Dsatur() {
+        //System.out.println("ALGORITHME DE DSATUR.");
+        reinitialiserCouleur();
+
         List<Sommet> fileAttente = ordonnerSommets();
         List<Integer> couleursPresentes;
         Sommet y;
         int i, maxDSAT;
         Sommet elu;
-        reinitialiserCouleur();
-
         while(!fileAttente.isEmpty()){
             elu=fileAttente.get(0);
             maxDSAT=0;
@@ -205,8 +203,7 @@ public class Graphe {
             elu.setCouleur(elu.couleurMinimale());
             fileAttente.remove(elu);
         }
-        System.out.println("Test de Dsatur.");
-        this.getColoration();
+        //this.getColoration();
     }
 
 
