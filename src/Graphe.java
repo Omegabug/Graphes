@@ -163,18 +163,13 @@ public class Graphe {
             x=fileAttente.get(0);
             x.setCouleur(k);
             fileAttente.remove(x);
-
             for (i = 0; i < fileAttente.size(); i++) {
                 y=fileAttente.get(i);
-                 if (!y.couleurVoisin().contains(k)){
+                if (!y.couleurVoisin().contains(k)){
                     y.setCouleur(k);
                     fileAttente.remove(y);
                     i--;
-
-                 }
-
-
-
+                }
             }
             k++;
 
@@ -182,6 +177,44 @@ public class Graphe {
         System.out.println("Test de Welsh Powell");
         this.getColoration();
     }
+
+    public void Dsatur(){
+        List<Sommet> fileAttente=ordonnerSommets();
+        List<Integer> couleursPresentes;
+        Sommet y;
+        int i,maxDSAT;
+        int k=0;
+        Sommet elu;
+        reinitialiserCouleur();
+
+
+
+        while(!fileAttente.isEmpty()){
+
+            elu=fileAttente.get(0);
+
+            maxDSAT=0;
+            //Calcule de DSAT
+            for (i = 0; i < fileAttente.size(); i++) {
+                y=fileAttente.get(i);
+                couleursPresentes=y.couleurVoisin();
+                if (couleursPresentes.size()>maxDSAT||(couleursPresentes.size()==maxDSAT&&y.degre()>elu.degre())){
+                    elu=y;
+                    maxDSAT=couleursPresentes.size();
+                }
+
+
+
+            }
+            elu.setCouleur(elu.couleurMinimale());
+
+            fileAttente.remove(elu);
+
+        }
+        System.out.println("Test de Dsatur");
+        this.getColoration();
+    }
+
 
     public void reinitialiserCouleur(){
         for (Sommet s:

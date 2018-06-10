@@ -23,6 +23,8 @@ public class test {
         g.greedyColoring();
         g.reinitialiserCouleur();
         g.welshPowell();
+        clocking(g,x-> x.Dsatur());
+
         // clocking(g, x -> x.lectureGraphe("crown10.txt"));
         // g.ordonnerSommets();
     }
@@ -32,4 +34,5 @@ public class test {
     clocking(monGraphe, x -> x.maMethode());
     Tu peux mettre 'x' comme tu peux mettre 'y', 'z' ou 'nazi' : on s'en fout totalement, c'est une pure variable muette. <3
      */
+
 }

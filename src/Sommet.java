@@ -70,9 +70,28 @@ public class Sommet {
         List<Integer> couleurVoisin=new ArrayList<>();
 
         for (int i = 0; i < aretes.size(); i++) {
-             couleurVoisin.add(aretes.get(i).getCouleur());
+            if(!couleurVoisin.contains(aretes.get(i).getCouleur()))
+                couleurVoisin.add(aretes.get(i).getCouleur());
 
         }
         return couleurVoisin;
+    }
+    public int couleurMinimale(){
+        int max;
+        List<Integer> voisin=couleurVoisin();
+        boolean recherche=true;
+        int j;
+        max=0;
+        for ( j = 1; recherche; j++) {
+
+             if(!voisin.contains(j)){
+                 return j;
+             }
+
+
+        }
+
+
+        return j;
     }
 }
