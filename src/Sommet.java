@@ -49,7 +49,6 @@ public class Sommet {
         return aretes.size();
     }
 
-
     public String toString() { return String.valueOf(numero); }
 
     public int getCouleur(){
@@ -67,31 +66,20 @@ public class Sommet {
     }
 
     public List<Integer> couleurVoisin(){
-        List<Integer> couleurVoisin=new ArrayList<>();
-
-        for (int i = 0; i < aretes.size(); i++) {
-            if(!couleurVoisin.contains(aretes.get(i).getCouleur()))
-                couleurVoisin.add(aretes.get(i).getCouleur());
-
+        List<Integer> couleurVoisins = new ArrayList<>();
+        for (Sommet arete : aretes) {
+            if (!couleurVoisins.contains(arete.getCouleur()))
+                couleurVoisins.add(arete.getCouleur());
         }
-        return couleurVoisin;
+        return couleurVoisins;
     }
     public int couleurMinimale(){
-        int max;
-        List<Integer> voisin=couleurVoisin();
-        boolean recherche=true;
+        List<Integer> voisin = couleurVoisin();
         int j;
-        max=0;
-        for ( j = 1; recherche; j++) {
-
+        for (j = 1; true; j++) {
              if(!voisin.contains(j)){
                  return j;
              }
-
-
         }
-
-
-        return j;
     }
 }
