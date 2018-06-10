@@ -1,5 +1,8 @@
 import java.io.IOException;
 import java.util.function.Consumer;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class test {
 
@@ -13,6 +16,15 @@ public class test {
     public static void main(String[] args) {
         Graphe g = new Graphe();
         g.lectureGraphe("crown10.txt");
+        List<Sommet> temp;
+        temp=g.ordonnerSommets();
+
+
+        g.greedyColoring();
+        g.reinitialiserCouleur();
+        g.welshPowell();
+        clocking(g,x-> x.Dsatur());
+
         // clocking(g, x -> x.lectureGraphe("crown10.txt"));
         // g.ordonnerSommets();
     }
@@ -22,4 +34,5 @@ public class test {
     clocking(monGraphe, x -> x.maMethode());
     Tu peux mettre 'x' comme tu peux mettre 'y', 'z' ou 'nazi' : on s'en fout totalement, c'est une pure variable muette. <3
      */
+
 }
