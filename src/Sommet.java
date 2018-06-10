@@ -10,11 +10,6 @@ public class Sommet {
 
     private int couleur = 0;
     private int numero = 0;
-
-    public String getNom() {
-        return nom;
-    }
-
     private String nom = "Default";
     private List<Sommet> aretes = new ArrayList<>();
 
@@ -63,6 +58,10 @@ public class Sommet {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public String getNom() {
+        return nom;
     }
 
     public List<Integer> couleurVoisin(){
