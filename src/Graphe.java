@@ -87,9 +87,16 @@ public class Graphe {
     }
 
     // On ordonne les sommets en fonction de leur degré
-    public List<Sommet> ordonnerSommets() {
+    private List<Sommet> ordonnerSommets() {
         List<Sommet> sommetsSorted = new ArrayList<>(sommets);
         sommetsSorted.sort(Comparator.comparing(Sommet::degre).reversed());
+        return sommetsSorted;
+    }
+
+    // On ordonne les sommets en fonction de leur degré
+    private List<Sommet> ordonnerSommetsCroissant() {
+        List<Sommet> sommetsSorted = new ArrayList<>(sommets);
+        sommetsSorted.sort(Comparator.comparing(Sommet::degre));
         return sommetsSorted;
     }
 
@@ -131,19 +138,49 @@ public class Graphe {
         return length;
     }
 
-    public void greedyColoring() {
+    public void greedyColoringDecroissant(){
+        //System.out.println("ALGORITHME GREEDY.");
         reinitialiserCouleur();
 
         // On ordonne les sommets.
         List<Sommet> fileAttente = ordonnerSommets();
-        List<Integer> couleursPresentes;
+
+        greedy(fileAttente);
+        //this.getColoration();
+    }
+
+    public void greedyColoringCroissant(){
+        //System.out.println("ALGORITHME GREEDY.");
+        reinitialiserCouleur();
+
+        // On ordonne les sommets.
+        List<Sommet> fileAttente = ordonnerSommetsCroissant();
+
+
+        greedy(fileAttente);
+        //this.getColoration();
+    }
+
+    public void greedyColoring(){
+        //System.out.println("ALGORITHME GREEDY.");
+        reinitialiserCouleur();
+
+        // On ordonne les sommets.
+        List<Sommet> fileAttente =  new ArrayList<>(sommets);
+        
+        greedy(fileAttente);
+        //this.getColoration();
+    }
+
+    private void greedy(List<Sommet> fileAttente) {
         Sommet x;
+        List<Integer> couleursPresentes;
         int c;
         while (!fileAttente.isEmpty()) {
             x = fileAttente.get(0);
             // On réinitialise la liste des couleurs présentes dans l'entourage du sommet.
             couleursPresentes = x.couleurVoisin();
-            c=0;
+            c=1;
             while (couleursPresentes.contains(c)) {
                 c++;
             }
@@ -152,13 +189,43 @@ public class Graphe {
         }
     }
 
-    public void welshPowell() {
+    public void welshPowellColoringDecroissant() {
+        //System.out.println("ALGORITHME DE WELSH POWELL.");
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommets();
-        Sommet x, y;
-        int i;
+
         int k = 1;
+        weshPowell(fileAttente, k);
+        //this.getColoration();
+    }
+
+    public void welshPowellColoringCroissant() {
+        //System.out.println("ALGORITHME DE WELSH POWELL.");
+        reinitialiserCouleur();
+
+        List<Sommet> fileAttente = ordonnerSommetsCroissant();
+
+        int k = 1;
+        weshPowell(fileAttente, k);
+        //this.getColoration();
+    }
+
+    public void welshPowellColoring() {
+        //System.out.println("ALGORITHME DE WELSH POWELL.");
+        reinitialiserCouleur();
+
+        List<Sommet> fileAttente =new ArrayList<>(sommets) ;
+
+        int k = 1;
+        weshPowell(fileAttente, k);
+        //this.getColoration();
+    }
+
+    private void weshPowell(List<Sommet> fileAttente, int k) {
+        Sommet x;
+        int i;
+        Sommet y;
         while(!fileAttente.isEmpty()){
             x = fileAttente.get(0);
             x.setCouleur(k);
@@ -175,14 +242,43 @@ public class Graphe {
         }
     }
 
-    public void Dsatur() {
+    public void DsaturColoringDecroissant() {
+        //System.out.println("ALGORITHME DE DSATUR.");
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommets();
-        List<Integer> couleursPresentes;
-        Sommet y;
-        int i, maxDSAT;
+
+        Dsatur(fileAttente);
+        //this.getColoration();
+    }
+
+    public void DsaturColoringCroissant() {
+        //System.out.println("ALGORITHME DE DSATUR.");
+        reinitialiserCouleur();
+
+        List<Sommet> fileAttente = ordonnerSommetsCroissant();
+
+        Dsatur(fileAttente);
+        //this.getColoration();
+    }
+
+    public void DsaturColoring() {
+        //System.out.println("ALGORITHME DE DSATUR.");
+        reinitialiserCouleur();
+
+        List<Sommet> fileAttente = new ArrayList<>(sommets);
+
+
+        Dsatur(fileAttente);
+        //this.getColoration();
+    }
+
+    private void Dsatur(List<Sommet> fileAttente) {
         Sommet elu;
+        int maxDSAT;
+        int i;
+        Sommet y;
+        List<Integer> couleursPresentes;
         while(!fileAttente.isEmpty()){
             elu=fileAttente.get(0);
             maxDSAT=0;
@@ -201,7 +297,7 @@ public class Graphe {
     }
 
 
-    public void reinitialiserCouleur(){
+    private void reinitialiserCouleur(){
         for (Sommet s: sommets) {
             s.setCouleur(0);
         }
