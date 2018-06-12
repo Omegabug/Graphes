@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71d8e10e-ab0c-49a9-a761-7ba9d9d04da7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Graphe.java" afterPath="$PROJECT_DIR$/src/Graphe.java" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" afterPath="$PROJECT_DIR$/src/test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,28 +17,61 @@
       <file leaf-file-name="Graphe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graphe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="901">
+              <caret line="382" column="4" lean-forward="false" selection-start-line="382" selection-start-column="4" selection-end-line="382" selection-end-column="4" />
+              <folding>
+                <element signature="docComment;class#Graphe#0" expanded="false" />
+                <element signature="docComment;field#nom#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;field#oriente#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;field#nbSommets#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;field#nbArcs#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;field#sommets#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#Graphe#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#lectureGraphe#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#ordonnerSommets#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#ordonnerSommetsCroissant#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#greedyColoring#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#greedyColoringDecroissant#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#greedyColoringCroissant#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#greedy#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#dsaturColoring#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#dsaturColoringDecroissant#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#dsaturColoringCroissant#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#dsatur#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#reinitialiserCouleur#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#getColoration#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#toString#0;class#Graphe#0" expanded="false" />
+                <element signature="docComment;method#getSommets#0;class#Graphe#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="969">
+              <caret line="88" column="18" lean-forward="true" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+              <folding>
+                <element signature="docComment;class#test#0" expanded="false" />
+                <element signature="docComment;method#clocking#0;class#test#0" expanded="false" />
+                <element signature="docComment;method#moyenneClocking#0;class#test#0" expanded="false" />
+                <element signature="docComment;method#algoOnAllGraphMoyenne#0;class#test#0" expanded="false" />
+                <element signature="docComment;method#allAlgoOnGraph#0;class#test#0" expanded="false" />
+                <element signature="docComment;method#allAlgoOnGraphMoyenne#0;class#test#0" expanded="false" />
+                <element signature="docComment;method#allAlgoOnAllGraph#0;class#test#0" expanded="false" />
+                <element signature="docComment;method#allAlgoOnAllGraphMoyenne#0;class#test#0" expanded="false" />
+                <element signature="docComment;method#tousLesFichiers#0;class#test#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Couleur.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Couleur.java">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+            <state relative-caret-position="-6964">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,8 +90,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Graphe.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Graphe.java" />
+        <option value="$PROJECT_DIR$/src/test.java" />
       </list>
     </option>
   </component>
@@ -97,6 +128,11 @@
             <path>
               <item name="Graphes" type="b2602c69:ProjectViewProjectNode" />
               <item name="Graphes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Graphes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Graphes" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Graphes" type="b2602c69:ProjectViewProjectNode" />
@@ -154,6 +190,20 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Graphes" />
       <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -216,6 +266,11 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -230,12 +285,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528806465088</updated>
-      <workItem from="1528806466665" duration="72000" />
+      <workItem from="1528806466665" duration="3858000" />
     </task>
+    <task id="LOCAL-00001" summary="Documentation quasi finie">
+      <created>1528809739774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528809739774</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72000" />
+    <option name="totallyTimeSpent" value="3858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -248,9 +311,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33289126" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33158585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -276,11 +340,23 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Documentation quasi finie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation quasi finie" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Couleur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -291,16 +367,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="901">
+          <caret line="382" column="4" lean-forward="false" selection-start-line="382" selection-start-column="4" selection-end-line="382" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#Graphe#0" expanded="false" />
+            <element signature="docComment;field#nom#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;field#oriente#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;field#nbSommets#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;field#nbArcs#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;field#sommets#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#Graphe#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#lectureGraphe#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#ordonnerSommets#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#ordonnerSommetsCroissant#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#greedyColoring#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#greedyColoringDecroissant#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#greedyColoringCroissant#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#greedy#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#dsaturColoring#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#dsaturColoringDecroissant#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#dsaturColoringCroissant#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#dsatur#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#reinitialiserCouleur#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#getColoration#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#Graphe#0" expanded="false" />
+            <element signature="docComment;method#getSommets#0;class#Graphe#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state relative-caret-position="969">
+          <caret line="88" column="18" lean-forward="true" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+          <folding>
+            <element signature="docComment;class#test#0" expanded="false" />
+            <element signature="docComment;method#clocking#0;class#test#0" expanded="false" />
+            <element signature="docComment;method#moyenneClocking#0;class#test#0" expanded="false" />
+            <element signature="docComment;method#algoOnAllGraphMoyenne#0;class#test#0" expanded="false" />
+            <element signature="docComment;method#allAlgoOnGraph#0;class#test#0" expanded="false" />
+            <element signature="docComment;method#allAlgoOnGraphMoyenne#0;class#test#0" expanded="false" />
+            <element signature="docComment;method#allAlgoOnAllGraph#0;class#test#0" expanded="false" />
+            <element signature="docComment;method#allAlgoOnAllGraphMoyenne#0;class#test#0" expanded="false" />
+            <element signature="docComment;method#tousLesFichiers#0;class#test#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6964">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
