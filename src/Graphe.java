@@ -144,7 +144,6 @@ public class Graphe {
 
         // On ordonne les sommets.
         List<Sommet> fileAttente = ordonnerSommets();
-        List<Integer> couleursPresentes;
 
         greedy(fileAttente);
         //this.getColoration();
@@ -156,7 +155,7 @@ public class Graphe {
 
         // On ordonne les sommets.
         List<Sommet> fileAttente = ordonnerSommetsCroissant();
-        List<Integer> couleursPresentes;
+
 
         greedy(fileAttente);
         //this.getColoration();
@@ -168,7 +167,7 @@ public class Graphe {
 
         // On ordonne les sommets.
         List<Sommet> fileAttente =  new ArrayList<>(sommets);
-        List<Integer> couleursPresentes;
+
 
         greedy(fileAttente);
         //this.getColoration();
@@ -196,8 +195,7 @@ public class Graphe {
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommets();
-        Sommet x, y;
-        int i;
+
         int k = 1;
         weshPowell(fileAttente, k);
         //this.getColoration();
@@ -208,8 +206,7 @@ public class Graphe {
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommetsCroissant();
-        Sommet x, y;
-        int i;
+
         int k = 1;
         weshPowell(fileAttente, k);
         //this.getColoration();
@@ -220,8 +217,7 @@ public class Graphe {
         reinitialiserCouleur();
 
         List<Sommet> fileAttente =new ArrayList<>(sommets) ;
-        Sommet x, y;
-        int i;
+
         int k = 1;
         weshPowell(fileAttente, k);
         //this.getColoration();
@@ -252,7 +248,7 @@ public class Graphe {
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommets();
-       
+
         Dsatur(fileAttente);
         //this.getColoration();
     }

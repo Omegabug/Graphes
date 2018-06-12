@@ -13,12 +13,7 @@ public class test {
         // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
         // allAlgoOnAllGraphMoyenne(1000);
-        System.out.println("Test sur Greedy");
-        algoOnAllGraphMoyenne(Graphe::greedyColoring, 10000);
-        System.out.println("Test sur wesh Powell");
-        algoOnAllGraphMoyenne(Graphe::welshPowellColoring, 10000);
-        System.out.println("Test sur Dsatur");
-        algoOnAllGraphMoyenne(Graphe::DsaturColoring, 10000);
+       allAlgoOnAllGraphMoyenne(10000);
     }
 
     public static long clocking(Graphe g, Consumer<Graphe> method) {
@@ -60,7 +55,7 @@ public class test {
 
     // Applique tous les algos sur un graphe.
     public static void allAlgoOnGraph(String file) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::DsaturColoringCroissant));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
@@ -86,7 +81,7 @@ public class test {
 
     // Applique tous les algos sur un graphe, en moyennant.
     public static void allAlgoOnGraphMoyenne(String file, int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::DsaturColoringCroissant));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
