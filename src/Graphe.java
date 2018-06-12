@@ -77,7 +77,7 @@ public class Graphe {
                     }
                 }
                 System.out.println("Création du graphe " + nom + " réussie !");
-                listeAdjacence();
+                //listeAdjacence();
                 br.close();
                 in.close();
             } catch (IOException e) {
@@ -90,6 +90,13 @@ public class Graphe {
     public List<Sommet> ordonnerSommets() {
         List<Sommet> sommetsSorted = new ArrayList<>(sommets);
         sommetsSorted.sort(Comparator.comparing(Sommet::degre).reversed());
+        return sommetsSorted;
+    }
+
+    // On ordonne les sommets en fonction de leur degré
+    public List<Sommet> ordonnerSommetsCroissant() {
+        List<Sommet> sommetsSorted = new ArrayList<>(sommets);
+        sommetsSorted.sort(Comparator.comparing(Sommet::degre));
         return sommetsSorted;
     }
 
@@ -119,7 +126,7 @@ public class Graphe {
 
         int length = listeCouleurs.size();
         System.out.println("Nombre de couleurs nécessaires pour colorier le graphe : " + length);
-        for (Integer color : listeCouleurs) {
+        /*for (Integer color : listeCouleurs) {
             System.out.print(color + " ->");
             for (Sommet s : sommets) {
                 if ((couleur = s.getCouleur()) == color) {
@@ -127,8 +134,32 @@ public class Graphe {
                 }
             }
             System.out.print("\n");
-        }
+        }*/
         return length;
+    }
+
+    public void greedyColoringDecroissant(){
+        //System.out.println("ALGORITHME GREEDY.");
+        reinitialiserCouleur();
+
+        // On ordonne les sommets.
+        List<Sommet> fileAttente = ordonnerSommets();
+        List<Integer> couleursPresentes;
+
+        greedy(fileAttente);
+        //this.getColoration();
+    }
+
+    public void greedyColoringCroissant(){
+        //System.out.println("ALGORITHME GREEDY.");
+        reinitialiserCouleur();
+
+        // On ordonne les sommets.
+        List<Sommet> fileAttente = ordonnerSommetsCroissant();
+        List<Integer> couleursPresentes;
+
+        greedy(fileAttente);
+        //this.getColoration();
     }
 
     public void greedyColoring(){
@@ -136,22 +167,28 @@ public class Graphe {
         reinitialiserCouleur();
 
         // On ordonne les sommets.
-        List<Sommet> fileAttente = ordonnerSommets();
+        List<Sommet> fileAttente =  new ArrayList<>(sommets);
         List<Integer> couleursPresentes;
+
+        greedy(fileAttente);
+        //this.getColoration();
+    }
+
+    private void greedy(List<Sommet> fileAttente) {
         Sommet x;
+        List<Integer> couleursPresentes;
         int c;
         while (!fileAttente.isEmpty()) {
             x = fileAttente.get(0);
             // On réinitialise la liste des couleurs présentes dans l'entourage du sommet.
             couleursPresentes = x.couleurVoisin();
-            c=0;
+            c=1;
             while (couleursPresentes.contains(c)) {
                 c++;
             }
             x.setCouleur(c);
             fileAttente.remove(x);
         }
-        //this.getColoration();
     }
 
     public void welshPowell() {

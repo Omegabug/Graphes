@@ -13,8 +13,12 @@ public class test {
         // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
         // allAlgoOnAllGraphMoyenne(1000);
-
+        System.out.println("Test sur Greedy");
         algoOnAllGraphMoyenne(Graphe::greedyColoring, 1000);
+        System.out.println("Test sur wesh Powell");
+        algoOnAllGraphMoyenne(Graphe::welshPowell, 1000);
+        System.out.println("Test sur Dsatur");
+        algoOnAllGraphMoyenne(Graphe::Dsatur, 1000);
     }
 
     public static long clocking(Graphe g, Consumer<Graphe> method) {
