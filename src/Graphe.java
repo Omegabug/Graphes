@@ -77,7 +77,7 @@ public class Graphe {
                     }
                 }
                 System.out.println("Création du graphe " + nom + " réussie !");
-                listeAdjacence();
+                //listeAdjacence();
                 br.close();
                 in.close();
             } catch (IOException e) {
@@ -119,7 +119,7 @@ public class Graphe {
 
         int length = listeCouleurs.size();
         System.out.println("Nombre de couleurs nécessaires pour colorier le graphe : " + length);
-        for (Integer color : listeCouleurs) {
+        /*for (Integer color : listeCouleurs) {
             System.out.print(color + " ->");
             for (Sommet s : sommets) {
                 if ((couleur = s.getCouleur()) == color) {
@@ -127,12 +127,11 @@ public class Graphe {
                 }
             }
             System.out.print("\n");
-        }
+        }*/
         return length;
     }
 
-    public void greedyColoring(){
-        //System.out.println("ALGORITHME GREEDY.");
+    public void greedyColoring() {
         reinitialiserCouleur();
 
         // On ordonne les sommets.
@@ -151,11 +150,9 @@ public class Graphe {
             x.setCouleur(c);
             fileAttente.remove(x);
         }
-        //this.getColoration();
     }
 
     public void welshPowell() {
-        //System.out.println("ALGORITHME DE WELSH POWELL.");
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommets();
@@ -176,11 +173,9 @@ public class Graphe {
             }
             k++;
         }
-        //this.getColoration();
     }
 
     public void Dsatur() {
-        //System.out.println("ALGORITHME DE DSATUR.");
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommets();
@@ -203,7 +198,6 @@ public class Graphe {
             elu.setCouleur(elu.couleurMinimale());
             fileAttente.remove(elu);
         }
-        //this.getColoration();
     }
 
 

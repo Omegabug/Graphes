@@ -22,10 +22,4 @@
 hs_err_pid*
 
 .idea
-<<<<<<< HEAD
-*.xml
-=======
-.idea/workspace.xml
-.idea/workspace.xml
->>>>>>> ea971d5385288944b18fda0ba9c0f9918aa81121
 *.xml

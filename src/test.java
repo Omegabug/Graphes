@@ -10,11 +10,11 @@ public class test {
 
         //allAlgoOnGraph("src/Fichier/crown10.txt");
 
-        // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
+        allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
         // allAlgoOnAllGraphMoyenne(1000);
 
-        algoOnAllGraphMoyenne(Graphe::greedyColoring, 1000);
+        // algoOnAllGraphMoyenne(Graphe::greedyColoring, 1000);
     }
 
     public static long clocking(Graphe g, Consumer<Graphe> method) {
