@@ -8,7 +8,7 @@ public class test {
 
     public static void main(String[] args) {
 
-        //allAlgoOnGraph("src/Fichier/crown10.txt");
+        allAlgoOnGraph("src/Fichier/queen5_5.txt");
 
         // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
@@ -55,7 +55,7 @@ public class test {
 
     // Applique tous les algos sur un graphe.
     public static void allAlgoOnGraph(String file) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::DsaturColoringCroissant));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringDecroissant, Graphe::welshPowellColoringDecroissant, Graphe::DsaturColoringDecroissant));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
@@ -81,7 +81,7 @@ public class test {
 
     // Applique tous les algos sur un graphe, en moyennant.
     public static void allAlgoOnGraphMoyenne(String file, int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::DsaturColoringCroissant));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringDecroissant, Graphe::welshPowellColoringDecroissant, Graphe::DsaturColoringDecroissant));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 

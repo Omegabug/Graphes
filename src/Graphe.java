@@ -196,8 +196,7 @@ public class Graphe {
 
         List<Sommet> fileAttente = ordonnerSommets();
 
-        int k = 1;
-        weshPowell(fileAttente, k);
+        weshPowell(fileAttente);
         //this.getColoration();
     }
 
@@ -207,8 +206,8 @@ public class Graphe {
 
         List<Sommet> fileAttente = ordonnerSommetsCroissant();
 
-        int k = 1;
-        weshPowell(fileAttente, k);
+
+        weshPowell(fileAttente);
         //this.getColoration();
     }
 
@@ -218,15 +217,16 @@ public class Graphe {
 
         List<Sommet> fileAttente =new ArrayList<>(sommets) ;
 
-        int k = 1;
-        weshPowell(fileAttente, k);
+
+        weshPowell(fileAttente);
         //this.getColoration();
     }
 
-    private void weshPowell(List<Sommet> fileAttente, int k) {
+    private void weshPowell(List<Sommet> fileAttente) {
         Sommet x;
         int i;
         Sommet y;
+        int k = 1;
         while(!fileAttente.isEmpty()){
             x = fileAttente.get(0);
             x.setCouleur(k);
