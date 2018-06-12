@@ -10,18 +10,17 @@ import java.util.List;
  * @see #algoOnAllGraphMoyenne(Consumer, int)
  * @see #allAlgoOnAllGraphMoyenne(int)
  */
-public class test {
+public class TestColoration {
 
     public static void main(String[] args) {
 
-        allAlgoOnGraph("src/Fichier/queen5_5.txt");
-
+        // allAlgoOnGraph("src/Fichier/queen5_5.txt");
 
         // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
         // allAlgoOnAllGraphMoyenne(1000);
 
-        // algoOnAllGraphMoyenne(Graphe::greedyColoring, 1000);
+        algoOnAllGraphMoyenne(Graphe::greedyColoring, 1000);
     }
 
     /**
