@@ -14,6 +14,9 @@ public class test {
 
     public static void main(String[] args) {
 
+        allAlgoOnGraph("src/Fichier/queen5_5.txt");
+
+
         // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
         // allAlgoOnAllGraphMoyenne(1000);
@@ -82,7 +85,7 @@ public class test {
      * @see #clocking(Graphe, Consumer)
      */
     public static void allAlgoOnGraph(String file) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::dsaturColoringCroissant));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringDecroissant, Graphe::welshPowellColoringDecroissant, Graphe::dsaturColoringDecroissant));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
