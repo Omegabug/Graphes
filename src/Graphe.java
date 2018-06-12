@@ -221,37 +221,40 @@ public class Graphe {
         }
     }
 
+    /**
+     * Applique l'algorithme de Welsh Powell sur un graphe.
+     * @see #welshPowellColoring()
+     */
     public void welshPowellColoring() {
         reinitialiserCouleur();
-        List<Sommet> fileAttente =new ArrayList<>(sommets) ;
-
-        weshPowell(fileAttente);
-        //this.getColoration();
+        weshPowell(new ArrayList<>(sommets));
     }
 
+    /**
+     * Applique l'algorithme de Welsh Powell sur un graphe, en triant les sommets
+     * par degré décroissant.
+     * @see #welshPowellColoring()
+     */
     public void welshPowellColoringDecroissant() {
-        //System.out.println("ALGORITHME DE WELSH POWELL.");
         reinitialiserCouleur();
-
         List<Sommet> fileAttente = ordonnerSommets();
-
-
         weshPowell(fileAttente);
-        //this.getColoration();
     }
 
+    /**
+     * Applique l'algorithme de Welsh Powell sur un graphe, en triant les sommets
+     * par degré croissant.
+     * @see #welshPowellColoring()
+     */
     public void welshPowellColoringCroissant() {
-        //System.out.println("ALGORITHME DE WELSH POWELL.");
         reinitialiserCouleur();
-
         List<Sommet> fileAttente = ordonnerSommetsCroissant();
-
-
         weshPowell(fileAttente);
-        //this.getColoration();
     }
 
-
+    /**
+     * Applique l'algorithme de Welsh Powell sur une liste de sommets.
+     */
     private void weshPowell(List<Sommet> fileAttente) {
         Sommet x;
         int i;

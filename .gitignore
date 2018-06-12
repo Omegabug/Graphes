@@ -23,3 +23,6 @@ hs_err_pid*
 
 .idea
 *.xml
+*.xml
+.idea/misc.xml
+*.xml
