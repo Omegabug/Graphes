@@ -179,12 +179,4 @@ public class TestColoration {
         }
         return files;
     }
-
-    /* NOTES POUR MON JUAN
-    Pour chronométrer le temps que met "maMethode" à s'exécuter sur le graphe "monGraphe" :
-    clocking(monGraphe, x -> x.maMethode());
-    Tu peux mettre 'x' comme tu peux mettre 'y', 'z' ou 'nazi' : on s'en fout totalement, c'est une pure variable muette. <3
-     */
-
-
 }
