@@ -14,11 +14,11 @@ public class test {
 
         // allAlgoOnAllGraphMoyenne(1000);
         System.out.println("Test sur Greedy");
-        algoOnAllGraphMoyenne(Graphe::greedyColoring, 1000);
+        algoOnAllGraphMoyenne(Graphe::greedyColoring, 10000);
         System.out.println("Test sur wesh Powell");
-        algoOnAllGraphMoyenne(Graphe::welshPowell, 1000);
+        algoOnAllGraphMoyenne(Graphe::welshPowellColoring, 10000);
         System.out.println("Test sur Dsatur");
-        algoOnAllGraphMoyenne(Graphe::Dsatur, 1000);
+        algoOnAllGraphMoyenne(Graphe::DsaturColoring, 10000);
     }
 
     public static long clocking(Graphe g, Consumer<Graphe> method) {
@@ -47,7 +47,7 @@ public class test {
 
     // Applique un algo sur tous les graphes
     public static void algoOnAllGraphMoyenne(Consumer<Graphe> algo, int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowell, Graphe::Dsatur));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         List<String> files = tousLesFichiers("src/Fichier");
 
         Graphe g;
@@ -60,7 +60,7 @@ public class test {
 
     // Applique tous les algos sur un graphe.
     public static void allAlgoOnGraph(String file) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowell, Graphe::Dsatur));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
@@ -86,7 +86,7 @@ public class test {
 
     // Applique tous les algos sur un graphe, en moyennant.
     public static void allAlgoOnGraphMoyenne(String file, int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowell, Graphe::Dsatur));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
@@ -111,7 +111,7 @@ public class test {
     }
 
     public static void allAlgoOnAllGraph() {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowell, Graphe::Dsatur));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         List<String> files = tousLesFichiers("src/Fichier");
 
         for (String file : files) {
@@ -120,7 +120,7 @@ public class test {
     }
 
     public static void allAlgoOnAllGraphMoyenne(int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowell, Graphe::Dsatur));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         List<String> files = tousLesFichiers("src/Fichier");
 
         for (String file : files) {
