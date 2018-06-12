@@ -14,10 +14,10 @@ public class test {
 
     public static void main(String[] args) {
 
-        allAlgoOnGraph("src/Fichier/queen5_5.txt");
+        //allAlgoOnGraph("src/Fichier/queen5_5.txt");
 
 
-        // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
+         allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
         // allAlgoOnAllGraphMoyenne(1000);
 
