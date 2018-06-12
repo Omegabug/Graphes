@@ -4,18 +4,58 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * <p>Un graphe est principalement caractérisé par :
+ * <ul>
+ *     <li>un nom.</li>
+ *     <li>un booléen indiquant s'il est orienté.</li>
+ *     <li>la liste de ses sommets.</li>
+ * </ul>
+ * Pour construire un graphe, il ne faut pas seulement instancier l'objet : il faut faire
+ * appel à la méthode lectureGraphe(String fileName) qui va permettre de mettre à jour
+ * les attributs en fonction du contenu du fichier.
+ * </p>
+ * @see #nom
+ * @see #oriente
+ * @see #nbSommets
+ * @see #sommets
+ * @see #lectureGraphe(String)
+ */
 public class Graphe {
 
+    /**
+     * Nom du graphe.
+     */
     private String nom;
+    /**
+     * Indique si le graphe est orienté (true) ou non (false).
+     */
     private boolean oriente;
+    /**
+     * Nombre de sommets du graphe.
+     */
     private int nbSommets;
     private int nbValSommet;
+    /**
+     * Nombre d'arcs du graphe.
+     */
     private int nbArcs;
     private int nbValArcs;
+    /**
+     * Liste des sommets du graphe. Lorsqu'un graphe est mis à jour par la lectur  d'un fichier,
+     * ils sont "triés" par ordre d'arrivée de lecture.
+     */
     private List<Sommet> sommets = new ArrayList<>();
 
+    /**
+     * Constructeur de Graphe.
+     */
     public Graphe() {}
 
+    /**
+     * Permet de définir l'objet graphe en fonction du contenu d'un fichier.
+     * @param adresseFichier Fichier à lire.
+     */
     public void lectureGraphe(String adresseFichier) {
 
             InputStream in;
@@ -86,20 +126,9 @@ public class Graphe {
             }
     }
 
-    // On ordonne les sommets en fonction de leur degré
-    private List<Sommet> ordonnerSommets() {
-        List<Sommet> sommetsSorted = new ArrayList<>(sommets);
-        sommetsSorted.sort(Comparator.comparing(Sommet::degre).reversed());
-        return sommetsSorted;
-    }
-
-    // On ordonne les sommets en fonction de leur degré
-    private List<Sommet> ordonnerSommetsCroissant() {
-        List<Sommet> sommetsSorted = new ArrayList<>(sommets);
-        sommetsSorted.sort(Comparator.comparing(Sommet::degre));
-        return sommetsSorted;
-    }
-
+    /**
+     * Affiche la liste d'adjacence du graphe dans la console.
+     */
     public void listeAdjacence() {
         System.out.println("Liste d'adjacence :");
         for (Sommet s : sommets) {
@@ -114,64 +143,67 @@ public class Graphe {
         System.out.print("\n");
     }
 
-    public int getColoration() {
-
-        List<Integer> listeCouleurs = new ArrayList<>();
-        int couleur;
-        for (Sommet s : sommets) {
-            if (!listeCouleurs.contains((couleur = s.getCouleur()))) {
-                listeCouleurs.add(couleur);
-            }
-        }
-
-        int length = listeCouleurs.size();
-        System.out.println("Nombre de couleurs nécessaires pour colorier le graphe : " + length);
-        /*for (Integer color : listeCouleurs) {
-            System.out.print(color + " ->");
-            for (Sommet s : sommets) {
-                if ((couleur = s.getCouleur()) == color) {
-                    System.out.print(" " + s);
-                }
-            }
-            System.out.print("\n");
-        }*/
-        return length;
+    /**
+     * Ordonner les sommets du graphe par degré décroissant.
+     * @return Liste des sommets triés.
+     * @see #sommets
+     */
+    private List<Sommet> ordonnerSommets() {
+        List<Sommet> sommetsSorted = new ArrayList<>(sommets);
+        sommetsSorted.sort(Comparator.comparing(Sommet::degre).reversed());
+        return sommetsSorted;
     }
 
-    public void greedyColoringDecroissant(){
-        //System.out.println("ALGORITHME GREEDY.");
-        reinitialiserCouleur();
+    /**
+     * Ordonner les sommets du graphe par degré croissant.
+     * @return Liste des sommets triés.
+     * @see #sommets
+     */
+    private List<Sommet> ordonnerSommetsCroissant() {
+        List<Sommet> sommetsSorted = new ArrayList<>(sommets);
+        sommetsSorted.sort(Comparator.comparing(Sommet::degre));
+        return sommetsSorted;
+    }
 
+    /**
+     * Applique l'algorithme de coloration greedy au graphe.
+     * @see #greedy
+     */
+    public void greedyColoring(){
+        reinitialiserCouleur();
+        greedy(new ArrayList<>(sommets));
+    }
+
+    /**
+     * Applique l'algorithme de coloration greedy au graphe, en triant les sommets
+     * par degré décroissant.
+     * @see #greedy
+     * @see #ordonnerSommets()
+     */
+    public void greedyColoringDecroissant(){
+        reinitialiserCouleur();
         // On ordonne les sommets.
         List<Sommet> fileAttente = ordonnerSommets();
-
         greedy(fileAttente);
-        //this.getColoration();
     }
 
+    /**
+     * Applique l'algorithme de coloration greedy au graphe, en triant les sommets
+     * par degré croissant.
+     * @see #greedy
+     * @see #ordonnerSommetsCroissant()
+     */
     public void greedyColoringCroissant(){
-        //System.out.println("ALGORITHME GREEDY.");
         reinitialiserCouleur();
-
         // On ordonne les sommets.
         List<Sommet> fileAttente = ordonnerSommetsCroissant();
-
-
         greedy(fileAttente);
-        //this.getColoration();
     }
 
-    public void greedyColoring(){
-        //System.out.println("ALGORITHME GREEDY.");
-        reinitialiserCouleur();
-
-        // On ordonne les sommets.
-        List<Sommet> fileAttente =  new ArrayList<>(sommets);
-        
-        greedy(fileAttente);
-        //this.getColoration();
-    }
-
+    /**
+     * Applique l'algorithme de coloration greedy sur une liste de sommets.
+     * @param fileAttente Liste de sommets sur laquelle appliquer l'algorithme.
+     */
     private void greedy(List<Sommet> fileAttente) {
         Sommet x;
         List<Integer> couleursPresentes;
@@ -187,6 +219,14 @@ public class Graphe {
             x.setCouleur(c);
             fileAttente.remove(x);
         }
+    }
+
+    public void welshPowellColoring() {
+        reinitialiserCouleur();
+        List<Sommet> fileAttente =new ArrayList<>(sommets) ;
+        int k = 1;
+        weshPowell(fileAttente, k);
+        //this.getColoration();
     }
 
     public void welshPowellColoringDecroissant() {
@@ -205,17 +245,6 @@ public class Graphe {
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = ordonnerSommetsCroissant();
-
-        int k = 1;
-        weshPowell(fileAttente, k);
-        //this.getColoration();
-    }
-
-    public void welshPowellColoring() {
-        //System.out.println("ALGORITHME DE WELSH POWELL.");
-        reinitialiserCouleur();
-
-        List<Sommet> fileAttente =new ArrayList<>(sommets) ;
 
         int k = 1;
         weshPowell(fileAttente, k);
@@ -242,38 +271,55 @@ public class Graphe {
         }
     }
 
-    public void DsaturColoringDecroissant() {
-        //System.out.println("ALGORITHME DE DSATUR.");
-        reinitialiserCouleur();
-
-        List<Sommet> fileAttente = ordonnerSommets();
-
-        Dsatur(fileAttente);
-        //this.getColoration();
-    }
-
-    public void DsaturColoringCroissant() {
-        //System.out.println("ALGORITHME DE DSATUR.");
-        reinitialiserCouleur();
-
-        List<Sommet> fileAttente = ordonnerSommetsCroissant();
-
-        Dsatur(fileAttente);
-        //this.getColoration();
-    }
-
-    public void DsaturColoring() {
+    /**
+     * Applique l'algorithme de coloration de Dsatur au graphe.
+     * @see #dsatur(List)
+     */
+    public void dsaturColoring() {
         //System.out.println("ALGORITHME DE DSATUR.");
         reinitialiserCouleur();
 
         List<Sommet> fileAttente = new ArrayList<>(sommets);
 
 
-        Dsatur(fileAttente);
+        dsatur(fileAttente);
         //this.getColoration();
     }
 
-    private void Dsatur(List<Sommet> fileAttente) {
+    /**
+     * Applique l'algorithme de coloration de Dsatur au graphe, en triant les sommets
+     * par degré décroissant.
+     * @see #dsatur(List)
+     */
+    public void dsaturColoringDecroissant() {
+        //System.out.println("ALGORITHME DE DSATUR.");
+        reinitialiserCouleur();
+
+        List<Sommet> fileAttente = ordonnerSommets();
+
+        dsatur(fileAttente);
+        //this.getColoration();
+    }
+
+    /**
+     * Applique l'algorithme de coloration de Dsatur au graphe, en triant les sommets
+     * par degré croissant.
+     * @see #dsatur(List)
+     */
+    public void dsaturColoringCroissant() {
+        //System.out.println("ALGORITHME DE DSATUR.");
+        reinitialiserCouleur();
+
+        List<Sommet> fileAttente = ordonnerSommetsCroissant();
+
+        dsatur(fileAttente);
+        //this.getColoration();
+    }
+
+    /**
+     * Applique l'algorithme de coloration de Dsatur sur une liste de sommets.
+     */
+    private void dsatur(List<Sommet> fileAttente) {
         Sommet elu;
         int maxDSAT;
         int i;
@@ -296,14 +342,55 @@ public class Graphe {
         }
     }
 
-
+    /**
+     * Réiniatialise les couleurs des sommets du graphe.
+     */
     private void reinitialiserCouleur(){
         for (Sommet s: sommets) {
             s.setCouleur(0);
         }
     }
 
+    /**
+     * Affiche la coloration du graphe obtenue après l'application d'un algorithme.
+     * @return Nombre de couleurs du graphe.
+     * @see Sommet#couleur
+     */
+    public int getColoration() {
+
+        List<Integer> listeCouleurs = new ArrayList<>();
+        int couleur;
+        for (Sommet s : sommets) {
+            if (!listeCouleurs.contains((couleur = s.getCouleur()))) {
+                listeCouleurs.add(couleur);
+            }
+        }
+
+        int length = listeCouleurs.size();
+        System.out.println("Nombre de couleurs nécessaires pour colorier le graphe : " + length);
+        /*for (Integer color : listeCouleurs) {
+            System.out.print(color + " ->");
+            for (Sommet s : sommets) {
+                if ((couleur = s.getCouleur()) == color) {
+                    System.out.print(" " + s);
+                }
+            }
+            System.out.print("\n");
+        }*/
+        return length;
+    }
+
+    /**
+     * Récupère le nom du graphe.
+     * @return Nom du graphe.
+     * @see #nom
+     */
     public String toString() { return nom;}
 
+    /**
+     * Récupère la liste des sommets du graphe.
+     * @return Liste des sommets du graphe.
+     * @see #sommets
+     */
     public List<Sommet> getSommets() { return sommets; }
 }

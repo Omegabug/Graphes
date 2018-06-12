@@ -4,20 +4,29 @@ import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.List;
 
+/**
+ * Cette classe permet d'exécuter facilement les algorithmes dans l'idée d'obtenir un temps d'exécution moyen.
+ * @see #allAlgoOnGraphMoyenne(String, int)
+ * @see #algoOnAllGraphMoyenne(Consumer, int)
+ * @see #allAlgoOnAllGraphMoyenne(int)
+ */
 public class test {
 
     public static void main(String[] args) {
 
-        //allAlgoOnGraph("src/Fichier/crown10.txt");
-
-        allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
+        // allAlgoOnGraphMoyenne("src/Fichier/crown10.txt", 1000);
 
         // allAlgoOnAllGraphMoyenne(1000);
 
         // algoOnAllGraphMoyenne(Graphe::greedyColoring, 1000);
-       allAlgoOnAllGraphMoyenne(10000);
     }
 
+    /**
+     * Calcule le temps d'exécution d'un algorithme de coloration de graphe.
+     * @param g Graphe sur lequel appliquer l'algorithme de coloration.
+     * @param method Algorithme de coloration dont on veut le temps d'exécution.
+     * @return Temps d'exécution de la méthode en µs.
+     */
     public static long clocking(Graphe g, Consumer<Graphe> method) {
         long debut = System.nanoTime();
         method.accept(g);
@@ -30,6 +39,14 @@ public class test {
         return tempsMicro;
     }
 
+    /**
+     * Calcule le temps d'exécution moyen d'un algorithme de coloration de graphe.
+     * @param g Graphe sur lequel appliquer la méthode.
+     * @param method Algorithme de coloration dont on veut le temps d'exécution.
+     * @param nbEchantillons Nombre d'exécutions de l'algorithme à réaliser pour moyenner.
+     * @return Temps d'exécution moyen de l'algorithme en µs.
+     * @see #clocking(Graphe, Consumer)
+     */
     public static long moyenneClocking(Graphe g, Consumer<Graphe> method, int nbEchantillons) {
         long temps = 0;
         long moyenne;
@@ -42,11 +59,15 @@ public class test {
         return moyenne;
     }
 
-    // Applique un algo sur tous les graphes
+    /**
+     * Applique un algorithme de coloration sur tous les graphes présents dans le dossier "Fichier".
+     * @param algo Algorithme de coloration à appliquer.
+     * @param nbEchantillons Nombre d'exécutions de l'algorithme à réaliser pour  moyenner.
+     * @see #tousLesFichiers(String)
+     * @see #moyenneClocking(Graphe, Consumer, int)
+     */
     public static void algoOnAllGraphMoyenne(Consumer<Graphe> algo, int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         List<String> files = tousLesFichiers("src/Fichier");
-
         Graphe g;
         for (String file : files) {
             g = new Graphe();
@@ -55,9 +76,13 @@ public class test {
         }
     }
 
-    // Applique tous les algos sur un graphe.
+    /**
+     * Applique tous les algorithmes de coloration sur un graphe.
+     * @param file Graphe sur lequel appliquer les algorithmes de coloration.
+     * @see #clocking(Graphe, Consumer)
+     */
     public static void allAlgoOnGraph(String file) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::DsaturColoringCroissant));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::dsaturColoringCroissant));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
@@ -81,9 +106,14 @@ public class test {
         }
     }
 
-    // Applique tous les algos sur un graphe, en moyennant.
+    /**
+     * Applique un certain nombre de fois tous les algorithmes sur un graphe, tout en moyennant le temps d'exécution des algorithmes.
+     * @param file Graphe sur lequel appliquer les algorithmes.
+     * @param nbEchantillons Nombre d'exécutions des algorithmes pour moyenner le temps d'exécution
+     * @see #moyenneClocking(Graphe, Consumer, int)
+     */
     public static void allAlgoOnGraphMoyenne(String file, int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::DsaturColoringCroissant));
+        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoringCroissant, Graphe::welshPowellColoringCroissant, Graphe::dsaturColoringCroissant));
         Graphe g = new Graphe();
         g.lectureGraphe(file);
 
@@ -107,25 +137,33 @@ public class test {
         }
     }
 
+    /**
+     * Applique tous les algorithmes de coloration sur tous les graphes présents dans le dossier "Fichier".
+     */
     public static void allAlgoOnAllGraph() {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         List<String> files = tousLesFichiers("src/Fichier");
-
         for (String file : files) {
             allAlgoOnGraph(file);
         }
     }
 
+    /**
+     * Applique tous les algorithmes de coloration sur tous les graphes présents dans le dossier "Fichier", tout en moyennant les temps d'exécution.
+     * @param nbEchantillons Nombre d'exécutions des algorithmes pour moyenner leur temps d'exécution.
+     * @see #allAlgoOnGraphMoyenne(String, int)
+     */
     public static void allAlgoOnAllGraphMoyenne(int nbEchantillons) {
-        List<Consumer<Graphe>> algos = new ArrayList<>(Arrays.asList(Graphe::greedyColoring, Graphe::welshPowellColoring, Graphe::DsaturColoring));
         List<String> files = tousLesFichiers("src/Fichier");
-
         for (String file : files) {
             allAlgoOnGraphMoyenne(file, nbEchantillons);
         }
     }
 
-    // On récupère le nom de tous les fichiers dans le repértoire.
+    /**
+     * Récupère les adresses des fichiers présents dans un repértoire.
+     * @param directory Repértoire dans lequel récupérer les fichiers.
+     * @return Liste des adresses des fichiers.
+     */
     public static List<String> tousLesFichiers(String directory) {
         File dir = new File(directory);
         File[] allFiles = dir.listFiles();
